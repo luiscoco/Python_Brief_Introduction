@@ -210,5 +210,116 @@ def greet(name):
 print(greet("Alice"))  # Output: HELLO, ALICE
 ```
 
+## 14. Concurrency with Threading and Multiprocessing
+
+Python supports concurrent programming using threads and processes
+
+Here's an example using **threading**:
+
+```python
+import threading
+
+def print_numbers():
+    for i in range(5):
+        print(i)
+
+thread = threading.Thread(target=print_numbers)
+thread.start()
+```
+
+And here's an example using **multiprocessing**:
+
+```python
+from multiprocessing import Process
+
+def print_numbers():
+    for i in range(5):
+        print(i)
+
+process = Process(target=print_numbers)
+process.start()
+```
+
+## 15. Asynchronous Programming with Async/Await
+
+Python supports asynchronous programming using the asyncio module
+
+Here's an example using **async** and **await**:
+
+```python
+import asyncio
+
+async def greet(name):
+    await asyncio.sleep(1)
+    print(f"Hello, {name}")
+
+asyncio.run(greet("Alice"))
+```
+
+## 16. Context Managers
+
+Python supports context managers using the with statement
+
+Here's an example using a **custom context manager**:
+
+```python
+class MyContextManager:
+    def __enter__(self):
+        print("Entering the context")
+        return self
+
+    def __exit__(self, exc_type, exc_value, traceback):
+        print("Exiting the context")
+
+with MyContextManager() as cm:
+    print("Inside the context")
+```
+
+## 17. Metaprogramming with Decorators and Metaclasses
+
+Python allows you to modify classes and functions dynamically using decorators and metaclasses
+
+Here's an example using a class **decorator**:
+
+```python
+Copy code
+def add_property(cls):
+    cls.new_property = property(lambda self: self._value * 2)
+    return cls
+
+@add_property
+class MyClass:
+    def __init__(self, value):
+        self._value = value
+
+obj = MyClass(5)
+print(obj.new_property)  # Output: 10
+```
+
+## 18. Descriptors
+
+Python descriptors allow you to define how attributes are accessed and modified
+
+Here's an example using a **descriptor**:
+
+```python
+class ReversedString:
+    def __get__(self, instance, owner):
+        return instance._value[::-1]
+
+    def __set__(self, instance, value):
+        instance._value = value[::-1]
+
+class MyClass:
+    string = ReversedString()
+
+    def __init__(self, value):
+        self._value = value
+
+obj = MyClass("hello")
+print(obj.string)  # Output: olleh
+obj.string = "world"
+print(obj.string)  # Output: dlrow
+```
 
 
