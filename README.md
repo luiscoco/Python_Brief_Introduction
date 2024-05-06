@@ -282,7 +282,6 @@ Python allows you to modify classes and functions dynamically using decorators a
 Here's an example using a class **decorator**:
 
 ```python
-Copy code
 def add_property(cls):
     cls.new_property = property(lambda self: self._value * 2)
     return cls
