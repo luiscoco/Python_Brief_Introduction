@@ -78,20 +78,120 @@ print("Current date and time:", now)
 
 ## 6. Object-Oriented
 
-Python supports object-oriented programming, allowing you to define classes and objects
+Object-Oriented Programming (OOP) is a programming paradigm that uses objects and classes in programming
 
-For example:
+It aims to implement real-world entities like inheritance, hiding, polymorphism etc. in programming
+
+The main concepts of OOP in Python are:
+
+**Class**: A blueprint for creating objects
+
+**Object**: An instance of a class
+
+**Attributes**: Characteristics shared by all instances of a class
+
+**Methods**: Functions defined inside a class and can only be used with an instance of that class
+
+**Inheritance**: Mechanism of basing an object or class upon another object (prototypical inheritance) or class (class-based inheritance), retaining similar implementation
+
+**Encapsulation**: Hiding of private details of a class from other objects
+
+**Polymorphism**: A concept of using common operation in different ways for different data input
+
+Let's break down these concepts with code snippets.
+
+### 6.1. Defining a Class with Attributes and Methods
+
+Here's a simple example of a class in Python, which models a Dog with attributes like name and age, and methods to define its actions
 
 ```python
 class Dog:
-    def __init__(self, name):
+    def __init__(self, name, age):
         self.name = name
+        self.age = age
 
     def bark(self):
-        print(f"{self.name} says Woof!")
+        return f"{self.name} says woof!"
 
-my_dog = Dog("Buddy")
-my_dog.bark()  # Output: Buddy says Woof!
+    def describe(self):
+        return f"{self.name} is {self.age} years old."
+```
+
+### 6.2. Creating Objects
+
+You can create an instance of a Dog class by calling it like a function and passing the initial values for the name and age
+
+```python
+my_dog = Dog("Buddy", 4)
+print(my_dog.describe())
+print(my_dog.bark())
+```
+
+### 6.3. Inheritance
+
+Inheritance allows us to define a class that inherits all the methods and properties from another class
+
+```python
+class Labrador(Dog):
+    def __init__(self, name, age, color):
+        super().__init__(name, age)
+        self.color = color
+
+    def describe(self):
+        return f"{self.name} is a {self.color} Labrador and is {self.age} years old."
+
+my_lab = Labrador("Max", 3, "golden")
+print(my_lab.describe())
+```
+
+### 6.4. Encapsulation
+
+Encapsulation is used to restrict access to methods and variables
+
+This can prevent the data from being modified by accident and is done using private attributes using underscores (_)
+
+```python
+class Account:
+    def __init__(self, owner, balance):
+        self.owner = owner
+        self.__balance = balance  # private attribute
+
+    def deposit(self, amount):
+        if amount > 0:
+            self.__balance += amount
+            print("Deposit successful")
+        else:
+            print("Invalid amount")
+
+    def show_balance(self):
+        return f"{self.owner}'s balance is: ${self.__balance}"
+
+acc = Account("John", 200)
+acc.deposit(100)
+print(acc.show_balance())
+```
+
+### 6.5. Polymorphism
+
+Polymorphism allows us to define methods in the child class that have the same name as the methods in the parent class
+
+```python
+class Cat:
+    def speak(self):
+        return "Meow!"
+
+class Dog:
+    def speak(self):
+        return "Woof!"
+
+def pet_speak(pet):
+    print(pet.speak())
+
+my_cat = Cat()
+my_dog = Dog()
+
+pet_speak(my_cat)
+pet_speak(my_dog)
 ```
 
 ## 7. Functional Programming
