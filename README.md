@@ -38,9 +38,137 @@ python hello_world.py
 
 ![image](https://github.com/luiscoco/Python_Brief_Introduction/assets/32194879/d52ced43-6350-438e-ba8b-e2d3d27a0d81)
 
-## 3. Dynamic Typing
+## 3. Variable types and built-in objects
 
-You don't need to declare variable types explicitly; Python infers them dynamically. For example:
+Python has a range of variable types and built-in objects that facilitate various kinds of operations and data management
+
+Let's go through the primary types and provide some code samples for each
+
+### 3.1. Basic Variable Types
+
+These are the fundamental types that you will use very frequently in Python
+
+**Integer**
+
+Integers (int) are whole numbers without a fractional part
+
+```python
+x = 10
+print(x, type(x))
+```
+
+**Float**
+
+Floating point numbers (float) represent real numbers and are written with a decimal point dividing the integer and fractional parts
+
+```python
+y = 3.14
+print(y, type(y))
+```
+
+**String**
+
+Strings (str) are sequences of Unicode characters, used for storing text
+
+```python
+z = "Hello, Python!"
+print(z, type(z))
+```
+
+**Boolean**
+
+Booleans (bool) can have two values: True and False. They are often used in conditions to control the flow of the program
+
+```python
+a = True
+b = False
+print(a, type(a))
+print(b, type(b))
+```
+
+### 3.2. Built-in Compound Types
+
+Python also has several built-in types that can handle multiple items in a single variable
+
+**List**
+
+Lists are ordered and mutable collections that can contain mixed types
+
+```python
+Copy code
+my_list = [1, 2, 3, "Python", True]
+print(my_list, type(my_list))
+```
+
+**Tuple**
+
+Tuples are ordered and immutable collections
+
+Once created, their content cannot be changed
+
+```python
+my_tuple = (1, 2, 3, "Python")
+print(my_tuple, type(my_tuple))
+```
+
+**Dictionary**
+
+Dictionaries store data as key-value pairs and are mutable
+
+```python
+my_dict = {'name': 'John', 'age': 30}
+print(my_dict, type(my_dict))
+```
+
+**Set**
+
+Sets are unordered collections of unique elements.
+
+```python
+my_set = {1, 2, 3, 2}
+print(my_set, type(my_set))  # {1, 2, 3}
+```
+
+### 3.3. Other Built-in Types
+
+There are other types like **NoneType**, used for the None object, which signifies the absence of a value
+
+```python
+nothing = None
+print(nothing, type(nothing))
+```
+
+**Built-in Functions and Object Methods**
+
+Python has numerous built-in functions that interact with these types, and each type has its own set of methods
+
+For example:
+
+len() to get the length of a list, tuple, string, dictionary, or set
+
+.append() method to add an item to a list
+
+.upper() method to convert a string to uppercase
+
+Here's a quick demonstration of some of these functions and methods:
+
+```python
+# Built-in function
+print(len(my_list))
+
+# List method
+my_list.append("new item")
+print(my_list)
+
+# String method
+print(z.upper())
+```
+
+### 3.4. Dynamic Typing
+
+You don't need to declare variable types explicitly; Python infers them dynamically
+
+For example:
 
 ```python
 x = 5
@@ -63,7 +191,7 @@ for i in range(5):
     print(i)
 ```
 
-## 5. Extensive Standard Library:
+## 5. Extensive Standard Library
 
 Python comes with a large standard library that provides modules and functions for many common tasks
 
