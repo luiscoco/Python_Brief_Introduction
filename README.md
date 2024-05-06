@@ -76,7 +76,23 @@ now = datetime.now()
 print("Current date and time:", now)
 ```
 
+## 6. Object-Oriented
 
+Python supports object-oriented programming, allowing you to define classes and objects
+
+For example:
+
+```python
+class Dog:
+    def __init__(self, name):
+        self.name = name
+
+    def bark(self):
+        print(f"{self.name} says Woof!")
+
+my_dog = Dog("Buddy")
+my_dog.bark()  # Output: Buddy says Woof!
+```
 
     
 
