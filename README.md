@@ -214,6 +214,130 @@ squared = list(map(lambda x: x ** 2, numbers))
 print(squared)  # Output: [1, 4, 9, 16, 25]
 ```
 
+Functional programming is a programming paradigm where you model computations as the evaluation of mathematical functions and avoid changing-state and mutable data
+
+Python, being a multi-paradigm language, supports functional programming among other paradigms
+
+Below, I'll explain some of the key concepts of functional programming and illustrate each with Python code examples
+
+### 7.1. First-Class and Higher-Order Functions
+
+In functional programming, functions are first-class citizens. This means that functions can be passed around as arguments, returned from other functions, and assigned to variables
+
+Higher-order functions either take one or more functions as arguments or return a function
+
+Example: **Higher-Order Functions**
+
+```python
+def greet(name):
+    return "Hello, " + name
+
+def loud(text_func, name):
+    result = text_func(name)
+    return result.upper()
+
+print(loud(greet, "Alice"))
+```
+
+This loud function is a higher-order function because it takes a function text_func as an argument
+
+### 7.2. Pure Functions
+
+A pure function is a function where the output value is determined only by its input values, without observable side effects
+
+This is a core concept in functional programming
+
+Example: **Pure Function**
+
+```python
+def multiply(x, y):
+    return x * y
+
+result = multiply(2, 3)
+print(result)  # Output: 6
+```
+
+This function is pure because it always returns the same output for the same inputs and does not modify any external state
+
+### 7.3. Immutability
+
+In functional programming, once data is created, it cannot be changed
+
+This avoids side effects and makes the code more predictable
+
+Example: **Using Tuples (Immutable) Over Lists (Mutable)**
+
+```python
+def process_data(data):
+    return tuple(x * 2 for x in data)
+
+data = (1, 2, 3)
+new_data = process_data(data)
+print(new_data)  # Output: (2, 4, 6)
+```
+
+Using tuples emphasizes immutability in functional programming
+
+### 7.4. Function Composition
+
+Function composition is the process of combining two or more functions to produce a new function
+
+Composing functions together is a common practice in functional programming
+
+Example: **Function Composition**
+
+```python
+def add_five(x):
+    return x + 5
+
+def multiply_by_three(x):
+    return x * 3
+
+def compose(f, g):
+    return lambda x: f(g(x))
+
+combined_function = compose(add_five, multiply_by_three)
+print(combined_function(4))  # Output: 17
+```
+
+Here, combined_function first multiplies by three, then adds five
+
+### 7.5. Map, Filter, and Reduce
+
+These are staple functions in functional programming that operate on lists (or similar data structures) and return new lists
+
+Map applies a function to all items in an input list
+
+Filter creates a list of elements for which a function returns true
+
+Reduce applies a function of two arguments cumulatively to the items of a list
+
+Example: **Map, Filter, and Reduce**
+
+```python
+from functools import reduce
+
+# Map example
+
+numbers = [1, 2, 3, 4]
+squared = list(map(lambda x: x ** 2, numbers))
+print(squared)  # Output: [1, 4, 9, 16]
+
+# Filter example
+
+even_numbers = list(filter(lambda x: x % 2 == 0, numbers))
+print(even_numbers)  # Output: [2, 4]
+
+# Reduce example
+
+sum_of_numbers = reduce(lambda x, y: x + y, numbers)
+print(sum_of_numbers)  # Output: 10
+```
+
+Functional programming can lead to code that's easier to test, debug, and understand, especially in scenarios involving concurrency or shared state
+
+It is well-suited for processing pipelines, data analysis, and tasks requiring high reliability
+
 ## 8. List Comprehensions:
 
 Python supports concise syntax for creating lists based on existing lists
