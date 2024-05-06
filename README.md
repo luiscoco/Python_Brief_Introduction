@@ -94,7 +94,121 @@ my_dog = Dog("Buddy")
 my_dog.bark()  # Output: Buddy says Woof!
 ```
 
-    
+## 7. Functional Programming
+
+Python supports functional programming paradigms like lambda functions and map/filter/reduce
+
+For example:
+
+```python
+# Lambda function
+add = lambda x, y: x + y
+print(add(3, 5))  # Output: 8
+
+# Map function
+numbers = [1, 2, 3, 4, 5]
+squared = list(map(lambda x: x ** 2, numbers))
+print(squared)  # Output: [1, 4, 9, 16, 25]
+```
+
+## 8. List Comprehensions:
+
+Python supports concise syntax for creating lists based on existing lists
+
+For example:
+
+```python
+# Create a list of squares of numbers from 1 to 5
+squares = [x ** 2 for x in range(1, 6)]
+print(squares)  # Output: [1, 4, 9, 16, 25]
+```
+
+## 9. Exception Handling:
+
+Python allows you to handle exceptions gracefully using try, except, and finally blocks
+
+For example:
+
+```python
+try:
+    result = 10 / 0
+except ZeroDivisionError:
+    print("Cannot divide by zero!")
+```
+
+## 10. Modules and Packages:
+
+Python code can be organized into modules and packages, making it easy to reuse code across projects
+
+For example, you can **create a module** named my_module.py:
+
+```python
+# my_module.py
+def greet(name):
+    print("Hello, " + name)
+```
+
+Then you can **use this module** in another Python file:
+
+```python
+# main.py
+import my_module
+
+my_module.greet("Alice")
+```
+
+## 11. File Handling:
+
+Python provides built-in functions for reading from and writing to files
+
+For example:
+
+```python
+# Writing to a file
+with open("example.txt", "w") as file:
+    file.write("Hello, World!")
+
+# Reading from a file
+with open("example.txt", "r") as file:
+    content = file.read()
+    print(content)  # Output: Hello, World!
+```
+
+## 12. Generators:
+
+Python supports generators, which are functions that can yield multiple values lazily
+
+For example:
+
+```python
+def countdown(n):
+    while n > 0:
+        yield n
+        n -= 1
+
+for num in countdown(5):
+    print(num)  # Output: 5, 4, 3, 2, 1
+```
+
+## 13. Decorators:
+
+Python decorators allow you to modify the behavior of functions or methods
+
+For example:
+
+```python
+def uppercase_decorator(func):
+    def wrapper(*args, **kwargs):
+        result = func(*args, **kwargs)
+        return result.upper()
+    return wrapper
+
+@uppercase_decorator
+def greet(name):
+    return f"Hello, {name}"
+
+print(greet("Alice"))  # Output: HELLO, ALICE
+```
 
 
 
