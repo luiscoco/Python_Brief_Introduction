@@ -95,7 +95,6 @@ Python also has several built-in types that can handle multiple items in a singl
 Lists are ordered and mutable collections that can contain mixed types
 
 ```python
-Copy code
 my_list = [1, 2, 3, "Python", True]
 print(my_list, type(my_list))
 ```
