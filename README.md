@@ -1,5 +1,11 @@
 # Python: a brief introduction
 
+See also these links:
+
+https://www.geeksforgeeks.org/python-programming-language/?ref=lbp
+
+https://ide.geeksforgeeks.org/index.php
+
 ## 1. How to install Python
 
 https://www.python.org/downloads/
