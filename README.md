@@ -190,8 +190,11 @@ def pet_speak(pet):
 my_cat = Cat()
 my_dog = Dog()
 
-pet_speak(my_cat)
-pet_speak(my_dog)
+# Using the function with a Cat instance.
+pet_speak(my_cat)  # Output: Meow!
+
+# Using the function with a Dog instance.
+pet_speak(my_dog)  # Output: Woof!
 ```
 
 ## 7. Functional Programming
